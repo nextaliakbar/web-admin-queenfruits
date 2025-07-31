@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/mitg9525/public_html/webadminqueenfruits.mitrajamur.com
+    - /bin/cp -R images $DEPLOYPATH
