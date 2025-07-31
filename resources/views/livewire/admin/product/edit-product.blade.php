@@ -289,11 +289,7 @@
         'use-strict';
 
         $wire.on('toastUpdateProduct', (evt)=> {
-            if(evt.success) {
-              toastr.success(evt.message);
-            } else {
-              toastr.error(evt.message);
-            }
+          toastr.error(evt.message);
         });
 
     </script>

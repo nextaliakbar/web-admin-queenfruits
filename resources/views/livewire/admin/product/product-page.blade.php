@@ -172,6 +172,14 @@
             toastr.error(evt.message);
           }
         });
+
+        $wire.on('toastCreateProduct', (evt)=> {
+          toastr.success(evt.message);
+        });
+
+        $wire.on('toastUpdateProduct', (evt)=> {
+          toastr.success(evt.message);
+        });
       </script>
     @endscript
   </div>

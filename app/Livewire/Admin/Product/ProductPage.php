@@ -17,6 +17,22 @@ class ProductPage extends Component
     public $search, $productImages, $name, $price,
     $totalSale, $stock, $productId;
 
+    
+    public $event, $success, $message;
+
+    protected $queryString = ['event','success', 'message'];
+
+    public function mount()
+    {
+        if($this->event == 'toastCreateProduct' && $this->success) {
+            $this->dispatch($this->event, success: $this->success, message: $this->message);
+        }
+
+        if($this->event == 'toastUpdateProduct' && $this->success) {
+            $this->dispatch($this->event, success: $this->success, message: $this->message);
+        }
+    }
+
     public function render()
     {
         $data = [

@@ -145,9 +145,12 @@ class CreateProduct extends Component
         ]);
 
         if($create) {
-            $this->dispatch('toastCreateProduct', success: true, message: 'Produk berhasil ditambah');
             $this->refresh();
-            return $this->redirect(route('admin.product.index'), true);
+            return $this->redirect(route('admin.product.index', [
+                'event' => 'toastCreateProduct',
+                'success' => true,
+                'message' => 'Produk berhasil ditambah'
+            ]), true);
         } else {
             $this->dispatch('toastCreateProduct', success: false, message: 'Produk gagal ditambah');
         }

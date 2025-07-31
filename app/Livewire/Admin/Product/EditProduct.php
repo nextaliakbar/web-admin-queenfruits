@@ -184,9 +184,12 @@ class EditProduct extends Component
         $update = $product->update();
 
         if($update) {
-            $this->dispatch('toastUpdateProduct', success: true, message: 'Produk berhasil diperbarui');
             $this->refresh();
-            return $this->redirect(route('admin.product.index'), true);
+            return $this->redirect(route('admin.product.index', [
+                'event' => 'toastUpdateProduct',
+                'success' => true,
+                'message' => 'Produk berhasil diperbarui'
+            ]), true);
         } else {
             $this->dispatch('toastUpdateProduct', success: false, message: 'Produk gagal diperbarui');
         }
