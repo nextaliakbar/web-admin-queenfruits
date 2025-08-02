@@ -16,4 +16,6 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function() 
 
         Route::view('/edit/{productId}', 'layouts.admin.product.edit')->name('edit');
     });
+
+    Route::view('/banner', 'layouts.admin.banner.index')->name('banner.index');
 });

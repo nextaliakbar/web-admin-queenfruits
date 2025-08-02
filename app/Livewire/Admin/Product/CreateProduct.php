@@ -116,7 +116,7 @@ class CreateProduct extends Component
         }
         foreach($this->productImages as $key => $productImage) {
 
-            $fileName = 'product-image-' . ($key + 1) . '_' . Carbon::now()->format('Y-m-d-His')
+            $fileName = 'product-image-' . ($key + 1) . '_' . Carbon::now()->format('Y-m-d_His')
             . '.' . $productImage->getClientOriginalExtension();
 
             $productImage->storeAs('product-image', $fileName, 'public_uploads');

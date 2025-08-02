@@ -8,10 +8,15 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use Livewire\WithPagination;
 
 class CategoryPage extends Component
 {
+    use WithPagination;
+
     use WithFileUploads;
+
+    protected $paginationTheme = 'bootstrap';
 
     public $search, $name, $status, $priority, $categoryFile, $bannerFile,
     $existingCategoryFile, $existingBannerFile, $categoryId,

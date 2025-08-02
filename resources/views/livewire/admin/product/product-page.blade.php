@@ -65,7 +65,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($products as $product)
+                      @forelse ($products as $product)
                       <tr wire:key="{{$product->id}}">
                         <td>{{$loop->iteration}}</td>
                         <td>
@@ -131,7 +131,13 @@
                           </button>
                         </td>
                       </tr>
-                      @endforeach
+                      @empty
+                        <tr>
+                          <td colspan="8" class="text-center text-secondary">
+                            <h5>Tidak ada data yang tersedia</h5>
+                          </td>
+                        </tr>
+                      @endforelse
                     </tbody>
                   </table>
                   {{$products->links()}}

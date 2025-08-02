@@ -180,7 +180,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                      @foreach ($categories as $category)
+                      @forelse ($categories as $category)
                       <tr wire:key="{{$category->id}}">
                         <td>{{$loop->iteration}}</td>
                         <td>
@@ -210,9 +210,16 @@
                           </button>
                         </td>
                       </tr>
-                      @endforeach
+                      @empty
+                        <tr>
+                          <td colspan="6" class="text-center text-secondary">
+                            <h5>Tidak ada data yang tersedia</h5>
+                          </td>
+                        </tr>
+                      @endforelse
                     </tbody>
                   </table>
+                  {{$categories->links()}}
                 </div>
               </div>
               <!-- /.card-body -->

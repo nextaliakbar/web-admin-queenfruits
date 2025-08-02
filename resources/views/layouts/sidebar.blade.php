@@ -156,7 +156,7 @@
           <li class="nav-header">MANAJEMEN PROMOSI</li>
           
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a wire:navigate href="{{route('admin.banner.index')}}" class="nav-link {{request()->routeIs('admin.banner.index') ? 'active' : ''}}">
               <i class="nav-icon far fa-image"></i>
               <p>
                 Banner

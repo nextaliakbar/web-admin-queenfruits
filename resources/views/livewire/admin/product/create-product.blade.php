@@ -141,7 +141,7 @@
                       <div class="card">
                           <div class="card-body">
                               <div class="form-group">
-                                  <label for="name">Foto Produk <span class="text-danger">* (Rasio 1:1)</span></label>
+                                  <label for="productImage">Foto Produk <span class="text-danger">* (Rasio 1:1)</span></label>
                               </div>
                               <div class="form-group">
                                   <div class="row text-center">
