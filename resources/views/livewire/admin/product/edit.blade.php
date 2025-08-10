@@ -44,7 +44,7 @@
                               <div class="form-group">
                                   <div class="row">
                                       <div class="col-md-6">
-                                          <select wire:model="categoryId" class="form-control" required>
+                                          <select wire:model="categoryId" class="form-control mb-4 mb-md-0" required>
                                               <option value="" selected>-- Pilih Kategori Produk --</option>
                                               @foreach ($categories as $category)
                                                 <option value="{{$category->id}}" {{$categoryId == $category->id ? 'selected' : ''}}>{{$category->name}}</option>                                                
@@ -77,7 +77,7 @@
                                   </div>
                                   <div class="row mb-4">
                                       <div class="col-md-6">
-                                          <select wire:model.live="discountType" class="form-control">
+                                          <select wire:model.live="discountType" class="form-control mb-4 mb-md-0">
                                               <option value="" selected>-- Pilih Jenis Diskon --</option>
                                               <option value="Diskon Langsung">-- Diskon Langsung --</option>
                                               <option value="Diskon Persen">-- Diskon Persentase Dari Harga Produk --</option>
@@ -92,7 +92,7 @@
                                   </div>
                                   <div class="row">
                                       <div class="col-md-6">
-                                          <select wire:model.live="taxType" class="form-control" >
+                                          <select wire:model.live="taxType" class="form-control mb-4 mb-md-0">
                                               <option value="" selected>-- Pilih Jenis Pajak --</option>
                                               <option value="Pajak Langsung">-- Pajak Langsung --</option>
                                               <option value="Pajak Persen">-- Pajak Persentase Dari Harga Produk --</option>
@@ -117,7 +117,7 @@
                               <div class="form-group">
                                   <div class="row">
                                       <div class="col-md-6">
-                                          <select wire:model.live="stockType" class="form-control" required>
+                                          <select wire:model.live="stockType" class="form-control mb-4 mb-md-0" required>
                                               <option value="" selected>-- Pilih Jenis Stok --</option>
                                               <option value="Tak Terbatas">Selalu ada</option>
                                               <option value="Tetap">Tetap</option>
