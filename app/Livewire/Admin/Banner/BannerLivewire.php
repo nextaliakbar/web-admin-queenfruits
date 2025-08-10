@@ -12,7 +12,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
-class BannerPage extends Component
+class BannerLivewire extends Component
 {
     use WithPagination;
 
@@ -36,7 +36,7 @@ class BannerPage extends Component
             'products' => Product::whereIsActive(true)->get()
         ];
 
-        return view('livewire.admin.banner.banner-page', $data);
+        return view('livewire.admin.banner.index', $data);
     }
 
     public function refresh()

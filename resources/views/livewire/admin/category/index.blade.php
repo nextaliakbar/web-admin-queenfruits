@@ -26,12 +26,12 @@
             <!-- general form elements -->
             <div class="card">
               <!-- form start -->
-              <form wire:submit.prevent='{{$isEditMode ? "update($categoryId)" : "store"}}'>
+              <form wire:submit.prevent='{{$isEditMode ? "update" : "store"}}'>
                   <div class="card-body">
                       <div class="form-group mb-2">
-                          <label for="name">Nama</label>
+                          <label for="name">Nama <span class="text-danger">*</span></label>
                           <input wire:model="name" type="text" class="form-control @error('name') is-invalid @enderror" 
-                          id="name" placeholder="Misal: Buah Olahan">
+                          id="name" placeholder="Misal: Buah Olahan" required>
                       </div>
                       @error('name')
                       <div class="form-group">
@@ -48,11 +48,11 @@
                             </div>
                             <div wire:loading.remove wire:target="categoryFile">
                                 @if ($categoryFile)
-                                    <img width="105" height="105" class="rounded-10 border" src="{{ $categoryFile->temporaryUrl() }}" alt="image"/>
+                                    <img class="img-fluid rounded border" src="{{ $categoryFile->temporaryUrl() }}" alt="image"/>
                                 @elseif ($existingCategoryFile)
-                                    <img width="105" height="105" class="rounded-10 border" src='{{ asset("uploads/$existingCategoryFile") }}' alt="image"/>
+                                    <img class="img-fluid rounded border" src='{{ asset("uploads/$existingCategoryFile") }}' alt="image"/>
                                 @else
-                                    <img width="105" height="105" class="rounded-10 border" src="{{ asset('assets/image/img2.jpg') }}" alt="image"/>
+                                    <img class="img-fluid rounded border" src="{{ asset('assets/image/img2.jpg') }}" alt="image"/>
                                 @endif
                             </div>
                         </div>
@@ -65,11 +65,11 @@
 
                             <div wire:loading.remove wire:target="bannerFile">
                                 @if ($bannerFile)
-                                    <img width="500" height="250" class="rounded-10 border" src="{{ $bannerFile->temporaryUrl() }}" alt="image"/>
+                                    <img class="img-fluid rounded border" src="{{ $bannerFile->temporaryUrl() }}" alt="image"/>
                                 @elseif ($existingBannerFile)
-                                    <img width="500" height="250" class="rounded-10 border" src='{{ asset("uploads/$existingBannerFile") }}' alt="image"/>
+                                    <img class="img-fluid rounded border" src='{{ asset("uploads/$existingBannerFile") }}' alt="image"/>
                                 @else
-                                    <img width="500" height="250" class="rounded-10 border" src="{{ asset('assets/image/img1.jpg') }}" alt="image"/>
+                                    <img class="img-fluid rounded border" src="{{ asset('assets/image/img1.jpg') }}" alt="image"/>
                                 @endif
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                       <div class="row">
                           <div class="col-md-6">
                               <div class="form-group">
-                                  <label for="categoryFile">Gambar Kategori <span class="text-danger">* (Rasio 1:1)</span></label>
+                                  <label for="categoryFile">Gambar Kategori <span class="text-danger"> (Rasio 1:1)</span></label>
                                   <div class="input-group">
                                       <div class="custom-file">
                                           <input wire:model.live="categoryFile" type="file" class="custom-file-input @error('categoryFile') is-invalid @enderror" 
@@ -103,7 +103,7 @@
                           </div>
                           <div class="col-md-6">
                               <div class="form-group">
-                                  <label for="bannerFile">Gambar Banner Kategori <span class="text-danger">* (Rasio 2:1)</span></label>
+                                  <label for="bannerFile">Gambar Banner Kategori <span class="text-danger"> (Rasio 2:1)</span></label>
                                   <div class="input-group">
                                       <div class="custom-file">
                                           <input wire:model.live="bannerFile" type="file" class="custom-file-input @error('bannerFile') is-invalid @enderror" 
@@ -127,12 +127,12 @@
                               </div>  
                           </div>
                       </div>
-                      <div class="float-right">
-                          <div class="row">
-                            <button wire:click="refresh" type="button" class="btn btn-secondary mr-2"><i class="fas fa-times mr-2"></i>Batal</button>
-                            <button type="submit" class="btn btn-primary"><i class="fas fa-save mr-2"></i>Simpan</button>
-                          </div>
-                      </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="float-right">
+                      <button wire:click="refresh" type="button" class="btn btn-secondary mr-2"><i class="fas fa-times mr-2"></i>Batal</button>
+                      <button type="submit" class="btn btn-primary"><i class="fas fa-save mr-2"></i>Simpan</button>
+                    </div>
                   </div>
               </form>
             </div>
@@ -202,7 +202,7 @@
                           </select>
                         </td>
                         <td>
-                          <button wire:click="edit({{$category->id}})" type="button" class="btn btn-sm btn-warning mr-1">
+                          <button wire:click="edit({{$category->id}})" type="button" class="btn btn-sm btn-warning mr-1 mb-2 mb-md-0">
                             <i class="fas fa-edit"></i>
                           </button>
                           <button wire:click="confirm({{$category->id}})" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal">

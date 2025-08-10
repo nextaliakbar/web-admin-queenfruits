@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('admin_roles', function (Blueprint $table) {
+        Schema::create('time_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 25);
-            $table->string('module_access')->nullable();
+            $table->integer('day');
+            $table->time('opening_time');
+            $table->time('closing_time');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('admin_roles');
+        Schema::dropIfExists('time_schedules');
     }
 };

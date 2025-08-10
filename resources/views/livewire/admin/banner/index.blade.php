@@ -28,7 +28,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label for="title">Judul Banner</label>
+                          <label for="title">Judul Banner <span class="text-danger">*</span></label>
                           <input wire:model="title" type="text" class="form-control" id="title" placeholder="Misal : Buah Fresh" required>
                         </div>
                         <div class="form-group">
@@ -82,7 +82,7 @@
                           <div class="col-md-8 text-center">
                               <input wire:model.live="bannerImage" type="file" id="image1" class="d-none" accept=".png, .jpg, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
                               <label for="image1" class="d-flex justify-content-center align-items-center" 
-                              style="cursor: pointer; width: 290px; height: 145px; border-radius: .25rem;">
+                              style="cursor: pointer; border-radius: .25rem;">
                                   <div wire:loading wire:target="bannerImage">
                                     <div class="spinner-border text-primary" role="status">
                                         <span class="sr-only">Loading...</span>
@@ -91,11 +91,11 @@
   
                                   <div wire:loading.remove wire:target="bannerImage">
                                       @if(!empty($bannerImage))
-                                        <img width="290" height="145" src="{{$bannerImage->temporaryUrl()}}" alt="Upload Gambar 1">
+                                        <img class="img-fluid rounded" src="{{$bannerImage->temporaryUrl()}}" alt="Upload Gambar 1">
                                       @elseif(!empty($existingBannerImage))
-                                        <img width="290" height="145" src="{{ asset("uploads/$existingBannerImage") }}" alt="Upload Gambar 1">
+                                        <img class="img-fluid rounded" src="{{ asset("uploads/$existingBannerImage") }}" alt="Upload Gambar 1">
                                       @else
-                                        <img width="290" height="145" src="{{ asset('assets/image/img1.jpg') }}" alt="Upload Gambar 1">
+                                        <img class="img-fluid rounded" src="{{ asset('assets/image/img1.jpg') }}" alt="Upload Gambar 1">
                                       @endif
                                   </div>
                               </label>
@@ -110,11 +110,12 @@
                         </div>
                       </div>
                     </div>
+                    
+                  </div>
+                  <div class="card-footer">
                     <div class="float-right">
-                      <div class="row">
                         <button wire:click="refresh" type="button" class="btn btn-secondary mr-2"><i class="fas fa-times mr-2"></i>Batal</button>
                         <button type="submit" class="btn btn-primary"><i class="fas fa-save mr-2"></i>Simpan</button>
-                      </div>
                     </div>
                   </div>
                 </form>
@@ -194,7 +195,7 @@
                           </div>
                         </td>
                         <td>
-                          <button wire:click="edit({{$banner->id}})" type="button" class="btn btn-sm btn-warning mr-1">
+                          <button wire:click="edit({{$banner->id}})" type="button" class="btn btn-sm btn-warning mr-1 mb-2 mb-md-0">
                             <i class="fas fa-edit"></i>
                           </button>
                           <button wire:click="confirm({{$banner->id}})" type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#deleteModal">

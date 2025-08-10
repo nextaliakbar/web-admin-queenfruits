@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class EditProduct extends Component
+class EditProductLivewire extends Component
 {
     use WithFileUploads;
 
@@ -116,7 +116,7 @@ class EditProduct extends Component
             'categories' => Category::where('status', '!=', '0')->get(),
         ];
 
-        return view('livewire.admin.product.edit-product', $data);
+        return view('livewire.admin.product.edit', $data);
     }
 
     private function refresh()
@@ -148,6 +148,7 @@ class EditProduct extends Component
         $product->description = $this->description;
         $product->category_id = $this->categoryId;
         $product->product_type = $this->productType;
+        $product->price = $this->price;
         $product->discount_type = $this->discountType;
         $product->discount = $this->discount;
         $product->tax_type = $this->taxType;

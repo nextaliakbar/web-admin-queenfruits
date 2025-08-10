@@ -10,7 +10,7 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithPagination;
 
-class CategoryPage extends Component
+class CategoryLivewire extends Component
 {
     use WithPagination;
 
@@ -31,7 +31,7 @@ class CategoryPage extends Component
             ->orderBy('priority')->paginate(10)
         ];
 
-        return view('livewire.admin.category.category-page', $data);;
+        return view('livewire.admin.category.index', $data);;
     }
 
     protected function rules()

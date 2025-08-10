@@ -25,10 +25,10 @@
                         Jenis Banner
                         @if($categoryId)
                         : Banner Untuk Kategori Produk 
-                        ({{App\Models\Category::where('id', '=', $banner->category_id)->value('name') ?? 'Kategori produk tidak tersedia'}})
+                        ({{App\Models\Category::where('id', '=', $categoryId)->value('name') ?? 'Kategori produk tidak tersedia'}})
                         @elseif($productId)
                         : Banner Untuk Produk
-                        ({{App\Models\Product::where('id', '=', $banner->product_id)->value('name') ?? 'Produk tidak tersedia'}})
+                        ({{App\Models\Product::where('id', '=', $productId)->value('name') ?? 'Produk tidak tersedia'}})
                         @endif
                     </div>
                 </div>
@@ -37,7 +37,7 @@
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
                 <i class="fas fa-times mr-2"></i>Batal</button>
-            <button wire:click="destroy({{$bannerId}})" type="button" class="btn btn-danger">
+            <button wire:click="destroy" type="button" class="btn btn-danger">
                 <i class="fas fa-trash mr-2"></i>Hapus</button>
         </div>
         </div>

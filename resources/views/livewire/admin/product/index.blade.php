@@ -122,7 +122,7 @@
                         </td>
                         <td>
                           <a wire:navigate href="{{route('admin.product.edit', ['productId' => $product->id])}}">
-                            <button type="button" class="btn btn-sm btn-warning mr-1">
+                            <button type="button" class="btn btn-sm btn-warning mr-1 mb-2 mb-md-0">
                               <i class="fas fa-edit"></i>
                             </button>
                           </a>

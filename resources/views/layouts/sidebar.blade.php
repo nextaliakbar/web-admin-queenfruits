@@ -208,7 +208,7 @@
           <li class="nav-header">MANAJEMEN SISTEM</li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a wire:navigate href="{{route('admin.business-setting.business-info')}}" class="nav-link {{request()->routeIs('admin.business-setting.*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                 Pengaturan Bisnis
@@ -217,7 +217,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link {{request()->routeIs('admin.branch.*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-store"></i>
               <p>
                 Cabang Bisnis
@@ -226,13 +226,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.branch.add')}}" class="nav-link {{request()->routeIs('admin.branch.add') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah Cabang</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.branch.index')}}" class="nav-link {{request()->routeIs('admin.branch.index') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Cabang</p>
                 </a>

@@ -3,11 +3,9 @@
 namespace App\Livewire\Admin\Auth;
 
 use Illuminate\Support\Facades\Auth;
-use Livewire\Attributes\Layout;
-use Livewire\Attributes\Title;
 use Livewire\Component;
 
-class LoginPage extends Component
+class LoginLivewire extends Component
 {
     public $email;
 
@@ -15,7 +13,7 @@ class LoginPage extends Component
 
     public function render()
     {
-        return view('livewire.admin.auth.login-page');
+        return view('livewire.admin.auth.index');
     }
 
     public function login()

@@ -3,5 +3,5 @@
 @section('title', 'Daftar Produk')
 
 @section('content')
-    @livewire('admin.product.product-page')
+    @livewire('admin.product.product-livewire')
 @endsection

@@ -3,5 +3,5 @@
 @section('title', 'Banner')
 
 @section('content')
-    @livewire('admin.banner.banner-page')
+    @livewire('admin.banner.banner-livewire')
 @endsection

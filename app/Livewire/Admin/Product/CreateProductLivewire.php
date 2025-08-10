@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\File;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-class CreateProduct extends Component
+class CreateProductLivewire extends Component
 {
     use WithFileUploads;
 
@@ -99,7 +99,7 @@ class CreateProduct extends Component
             'categories' => Category::where('status', '!=', '0')->get()
         ];
 
-        return view('livewire.admin.product.create-product', $data);
+        return view('livewire.admin.product.create', $data);
     }
 
     public function store()

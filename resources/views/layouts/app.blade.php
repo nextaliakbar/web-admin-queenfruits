@@ -13,7 +13,7 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <!-- Site wrapper -->
 <div class="wrapper">
-  @include('layouts.navbar')
+  @livewire('navbar')
 
   @include('layouts.sidebar')
 
@@ -22,6 +22,8 @@
   @include('layouts.footer')
 </div>
 <!-- ./wrapper -->
+
+@stack('scripts')
 
 @include('layouts.script')
 

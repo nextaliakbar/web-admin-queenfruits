@@ -20,7 +20,7 @@
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">
                 <i class="fas fa-times mr-2"></i>Batal</button>
-            <button wire:click="destroy({{$categoryId}})" type="button" class="btn btn-danger">
+            <button wire:click="destroy" type="button" class="btn btn-danger">
                 <i class="fas fa-trash mr-2"></i>Hapus</button>
         </div>
         </div>

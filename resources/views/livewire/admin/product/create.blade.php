@@ -27,7 +27,7 @@
                       <div class="card">
                           <div class="card-body">
                               <div class="form-group">
-                                  <label for="name">Nama</label>
+                                  <label for="name">Nama <span class="text-danger">*</span></label>
                                   <input wire:model="name" type="text" class="form-control" id="name" placeholder="Misal : Salad Buah 500gr" required>
                               </div>
                               <div class="form-group">
@@ -44,15 +44,15 @@
                           <div class="card-body">
                               <div class="form-group">
                                   <div class="row">
-                                      <div class="col-md-6">
-                                          <select wire:model="categoryId" class="form-control" required>
+                                      <div class="col-md-6 col-sm-12">
+                                          <select wire:model="categoryId" class="form-control mb-4 mb-md-0" required>
                                               <option value="" selected>-- Pilih Kategori Produk --</option>
                                               @foreach ($categories as $category)
                                                 <option value="{{$category->id}}">{{$category->name}}</option>                                                
                                               @endforeach
                                           </select>
                                       </div>
-                                      <div class="col-md-6">
+                                      <div class="col-md-6 col-sm-12">
                                           <select wire:model="productType" class="form-control" required>
                                               <option value="" selected>-- Pilih Jenis Produk --</option>
                                               <option value="Produk Lokal" selected>-- Produk Lokal --</option>
@@ -72,13 +72,13 @@
                               <div class="form-group">
                                   <div class="row">
                                       <div class="col-md-12 mb-4">
-                                          <label for="price">Harga</label>
+                                          <label for="price">Harga <span class="text-danger">*</span></label>
                                           <input wire:model="price" type="number" class="form-control " id="price" placeholder="Masukkan hanya angka, misal : 25000" required>
                                       </div>
                                   </div>
                                   <div class="row mb-4">
                                       <div class="col-md-6">
-                                          <select wire:model.live="discountType" class="form-control">
+                                          <select wire:model.live="discountType" class="form-control mb-4 mb-md-0">
                                               <option value="" selected>-- Pilih Jenis Diskon --</option>
                                               <option value="Diskon Langsung">-- Diskon Langsung --</option>
                                               <option value="Diskon Persen">-- Diskon Persentase Dari Harga Produk --</option>
@@ -93,7 +93,7 @@
                                   </div>
                                   <div class="row">
                                       <div class="col-md-6">
-                                          <select wire:model.live="taxType" class="form-control" >
+                                          <select wire:model.live="taxType" class="form-control mb-4 mb-md-0">
                                               <option value="" selected>-- Pilih Jenis Pajak --</option>
                                               <option value="Pajak Langsung">-- Pajak Langsung --</option>
                                               <option value="Pajak Persen">-- Pajak Persentase Dari Harga Produk --</option>
@@ -148,7 +148,7 @@
                                       <div class="col-md-4 text-center">
                                           <input wire:model.live="productImages.0" type="file" id="image1" class="d-none" accept=".png, .jpg, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
                                           <label for="image1" class="d-flex justify-content-center align-items-center" 
-                                          style="cursor: pointer; width: 150px; height: 150px; border-radius: .25rem;">
+                                          style="cursor: pointer; border-radius: .25rem;">
                                               <div wire:loading wire:target="productImages.0">
                                                 <div class="spinner-border text-primary" role="status">
                                                     <span class="sr-only">Loading...</span>
@@ -157,9 +157,9 @@
 
                                               <div wire:loading.remove wire:target="productImages.0">
                                                 @if($productImages && isset($productImages[0]))
-                                                  <img width="150" height="150" src="{{$productImages[0]->temporaryUrl()}}" alt="Upload Gambar 1">
+                                                  <img class="img-fluid rounded" src="{{$productImages[0]->temporaryUrl()}}" alt="Upload Gambar 1">
                                                 @else
-                                                  <img width="150" height="150" src="{{ asset('assets/image/add-image.png') }}" alt="Upload Gambar 1">
+                                                  <img class="img-fluid rounded" src="{{ asset('assets/image/add-image.png') }}" alt="Upload Gambar 1">
                                                 @endif
                                               </div>
                                           </label>
@@ -167,7 +167,7 @@
                                       <div class="col-md-4 text-center">
                                           <input wire:model.live="productImages.1" type="file" id="image2" class="d-none" accept=".png, .jpg, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
                                           <label for="image2" class="d-flex justify-content-center align-items-center" 
-                                          style="cursor: pointer; width: 150px; height: 150px; border-radius: .25rem;">
+                                          style="cursor: pointer; border-radius: .25rem;">
                                               <div wire:loading wire:target="productImages.1">
                                                 <div class="spinner-border text-primary" role="status">
                                                     <span class="sr-only">Loading...</span>
@@ -176,9 +176,9 @@
 
                                               <div wire:loading.remove wire:target="productImages.1">
                                                 @if($productImages && isset($productImages[1]))
-                                                  <img width="150" height="150" src="{{$productImages[1]->temporaryUrl()}}" alt="Upload Gambar 2">
+                                                  <img class="img-fluid rounded" src="{{$productImages[1]->temporaryUrl()}}" alt="Upload Gambar 2">
                                                 @else
-                                                  <img width="150" height="150" src="{{ asset('assets/image/add-image.png') }}" alt="Upload Gambar 2">
+                                                  <img class="img-fluid rounded" src="{{ asset('assets/image/add-image.png') }}" alt="Upload Gambar 2">
                                                 @endif
                                               </div>
                                           </label>
@@ -186,7 +186,7 @@
                                       <div class="col-md-4 text-center">
                                           <input wire:model.live="productImages.2" type="file" id="image3" class="d-none" accept=".png, .jpg, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
                                           <label for="image3" class="d-flex justify-content-center align-items-center" 
-                                          style="cursor: pointer; width: 150px; height: 150px; border-radius: .25rem;">
+                                          style="cursor: pointer; border-radius: .25rem;">
                                               <div wire:loading wire:target="productImages.2">
                                                 <div class="spinner-border text-primary" role="status">
                                                     <span class="sr-only">Loading...</span>
@@ -195,9 +195,9 @@
 
                                               <div wire:loading.remove wire:target="productImages.2">
                                                 @if($productImages && isset($productImages[2]))
-                                                  <img width="150" height="150" src="{{$productImages[2]->temporaryUrl()}}" alt="Upload Gambar 3">
+                                                  <img class="img-fluid rounded" src="{{$productImages[2]->temporaryUrl()}}" alt="Upload Gambar 3">
                                                 @else
-                                                  <img width="150" height="150" src="{{ asset('assets/image/add-image.png') }}" alt="Upload Gambar 3">
+                                                  <img class="img-fluid rounded" src="{{ asset('assets/image/add-image.png') }}" alt="Upload Gambar 3">
                                                 @endif
                                               </div>
                                           </label>
@@ -243,8 +243,8 @@
                                       </div>
                                   </div>
                                   <p class="mt-3 mb-0"><b>Catatan :</b></p>
-                                  <p class="text-muted medium mb-0">AM = Dimulai dari pukul 12:00 hingga 23:59</p>
-                                  <p class="text-muted medium mb-0">PM = Dimulai dari pukul 00:00 hingga 11:59</p>
+                                  <p class="text-muted medium mb-0">AM = Dimulai dari pukul 00:00 hingga 11:59</p>
+                                  <p class="text-muted medium mb-0">PM = Dimulai dari pukul 12:00 hingga 23:59</p>
                               </div>
                           </div>
                       </div>

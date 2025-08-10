@@ -2,53 +2,44 @@
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">Hapus Data Produk</h4>
+            <h4 class="modal-title">Hapus Data Cabang</h4>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
         </div>
         <div class="modal-body">
             <div class="form-group row" style="align-items: center;">
-                <div class="col-sm-3">
-                    @if(isset($productImages[0]))
-                        <img width="85" height="85" src="{{asset('uploads/' . $productImages[0])}}" alt="image">
-                    @elseif(isset($productImages[1]))
-                        <img width="85" height="85" src="{{asset('uploads/' . $productImages[1])}}" alt="image">
-                    @elseif(isset($productImages[2]))
-                        <img width="85" height="85" src="{{asset('uploads/' . $productImages[2])}}" alt="image">
-                    @endif
-                </div>
-                <div class="col sm-9">
+                <div class="col md-12">
                     <div class="row">
-                        <div class="col-sm-4">
-                            Nama Produk
+                        <div class="col-md-3">
+                            Nama Cabang
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-md-9">
                             : {{$name}}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4">
-                            Harga Jual
+                        <div class="col-md-3">
+                            Email
                         </div>
-                        <div class="col-sm-8">
-                            : Rp{{number_format($price, thousands_separator: ",")}}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Total Penjualan
-                        </div>
-                        <div class="col-sm-8">
-                            : {{$totalSale}}
+                        <div class="col-md-9">
+                            : {{$email}}
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-4">
-                            Stok
+                        <div class="col-md-3">
+                            No.telp
                         </div>
-                        <div class="col-sm-8">
-                            : {{$stock}}
+                        <div class="col-md-9">
+                            : {{$telp}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            Alamat
+                        </div>
+                        <div class="col-md-9">
+                            : {{$address}}
                         </div>
                     </div>
                 </div>

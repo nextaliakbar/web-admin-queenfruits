@@ -3,5 +3,5 @@
 @section('title', 'Masuk')
 
 @section('content')
-    @livewire('admin.auth.login-page')
+    @livewire('admin.auth.login-livewire')
 @endsection

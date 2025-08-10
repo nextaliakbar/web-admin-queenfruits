@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class ProductPage extends Component
+class ProductLivewire extends Component
 {
 
     use WithPagination;
@@ -40,7 +40,7 @@ class ProductPage extends Component
             ->orderBy('id', 'desc')->paginate(10)
         ];
 
-        return view('livewire.admin.product.product-page', $data);
+        return view('livewire.admin.product.index', $data);
     }
 
     public function updateStatus($productId)
