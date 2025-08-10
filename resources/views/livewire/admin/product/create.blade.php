@@ -118,7 +118,7 @@
                               <div class="form-group">
                                   <div class="row">
                                       <div class="col-md-6">
-                                          <select wire:model.live="stockType" class="form-control" required>
+                                          <select wire:model.live="stockType" class="form-control mb-4 mb-md-0" required>
                                               <option value="" selected>-- Pilih Jenis Stok --</option>
                                               <option value="Tak Terbatas">Selalu ada</option>
                                               <option value="Tetap">Tetap</option>
