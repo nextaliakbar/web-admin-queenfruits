@@ -28,7 +28,8 @@ class CategoryLivewire extends Component
     {
         $data = [
             'categories' => Category::where('name', 'like', '%' . $this->search . '%')
-            ->orderBy('priority')->paginate(10)
+            ->orderBy('priority')->paginate(10),
+            'count' => Category::count()
         ];
 
         return view('livewire.admin.category.index', $data);;

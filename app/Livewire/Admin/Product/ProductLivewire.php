@@ -37,7 +37,8 @@ class ProductLivewire extends Component
     {
         $data = [
             'products' => Product::where('name', 'like', '%' . $this->search . '%')
-            ->orderBy('id', 'desc')->paginate(10)
+            ->orderBy('id', 'desc')->paginate(10),
+            'count' => Product::count()
         ];
 
         return view('livewire.admin.product.index', $data);

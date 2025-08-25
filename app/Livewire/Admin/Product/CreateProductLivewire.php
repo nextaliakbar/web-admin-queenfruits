@@ -124,8 +124,8 @@ class CreateProductLivewire extends Component
             $productImages[$key] = 'product-image/' . $fileName;
         }
 
-
-        $create = Product::create([
+        // Create product
+        $createProduct = Product::create([
             'name' => $this->name,
             'description' => $this->description,
             'category_id' => $this->categoryId,
@@ -144,7 +144,18 @@ class CreateProductLivewire extends Component
             'is_recommend' => $this->isRecommend
         ]);
 
-        if($create) {
+        // Create product by branch
+        $createProduct->branch_product()->create([
+            'branch_id' => session()->get('branch_id') ?? 1,
+            'price' => $this->price,
+            'discount_type' => $this->discountType,
+            'discount' => $this->discount,
+            'stock_type' => $this->stockType,
+            'stock' => $this->stock,
+            'is_available' => true
+        ]);
+
+        if($createProduct && $createProduct) {
             $this->refresh();
             return $this->redirect(route('admin.product.index', [
                 'event' => 'toastCreateProduct',

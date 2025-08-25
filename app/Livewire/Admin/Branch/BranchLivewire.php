@@ -35,7 +35,8 @@ class BranchLivewire extends Component
     {
         $data = [
             'branches' => Branch::where('name', 'like', '%' . $this->search . '%')
-            ->with('delivery_charge_setup')->orderByDesc('id')->paginate(10)
+            ->with('delivery_charge_setup')->orderByDesc('id')->paginate(10),
+            'count' => Branch::count()
         ];
 
         return view('livewire.admin.branch.index', $data);

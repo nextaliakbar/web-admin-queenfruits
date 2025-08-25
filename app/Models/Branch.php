@@ -28,4 +28,9 @@ class Branch extends Authenticatable
     {
         return $this->hasOne(DeliveryChargeSetup::class, 'branch_id', 'id');
     }
+
+    public function product_by_branch()
+    {
+        return $this->hasOne(ProductByBranch::class, 'branch_id', 'id');
+    }
 }

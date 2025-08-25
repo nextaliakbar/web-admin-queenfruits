@@ -12,12 +12,12 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="telp">No. Telp</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">+62</span>
-                                </div>
-                                <input wire:model="telp" type="text" class="form-control" placeholder="Masukkan no. telp tanpa angka 0 di depan, misal : 8123456789" required>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">+62</span>
                             </div>
+                            <input wire:model="telp" type="numeric" class="form-control" placeholder="Masukkan no. telp tanpa angka 0 di depan, misal : 8123456789" required>
+                        </div>
                     </div>
                 </div>
         

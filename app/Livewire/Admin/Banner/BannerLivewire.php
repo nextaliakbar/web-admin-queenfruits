@@ -33,7 +33,8 @@ class BannerLivewire extends Component
             'banners' => Banner::where('title', 'like', '%' . $this->search . '%')
             ->orderByDesc('id')->paginate(10),
             'categories' => Category::whereStatus(true)->get(),
-            'products' => Product::whereIsActive(true)->get()
+            'products' => Product::whereIsActive(true)->get(),
+            'count' => Banner::count()
         ];
 
         return view('livewire.admin.banner.index', $data);

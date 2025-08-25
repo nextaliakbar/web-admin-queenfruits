@@ -24,4 +24,14 @@ class Product extends Model
         'images' => 'array',
         'is_recommend' => 'boolean'
     ];
+    
+    public function product_reviews()
+    {
+        return $this->hasMany(ProductReview::class, 'product_id', 'id');
+    }
+
+    public function branch_product()
+    {
+        return $this->hasOne(ProductByBranch::class, 'product_id', 'id');
+    }
 }

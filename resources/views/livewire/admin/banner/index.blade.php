@@ -6,11 +6,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1><i class="fas fa"></i>Tambah Banner Baru</h1>
+            <h1>Tambah Banner Baru</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#"><i class="far fa-image mr-1"></i>Banner</a></li>
+              <li class="breadcrumb-item"><i class="far fa-image mr-1"></i>Banner</li>
             </ol>
           </div>
         </div>
@@ -130,7 +130,7 @@
               <div class="card-header">
                 <div class="d-flex justify-content-between">
                   <div>
-                    <h3 class="card-title">Daftar Banner</h3>
+                    <h3 class="card-title">Daftar Banner <span class="badge badge-secondary">{{$count ?? 0}}</span></h3>
                   </div>
                   <div class="col-md-4 card-tools">
                     <div class="input-group input-group-md">
@@ -152,7 +152,7 @@
                 <div class="table-responsive">
                   <table class="table table-hover">
                     <thead>
-                      <tr>
+                      <tr style="background-color: #f8f9fa;">
                         <th>#</th>
                         <th>Gambar Banner</th>
                         <th>Judul Banner</th>

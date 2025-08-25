@@ -142,6 +142,8 @@ class EditProductLivewire extends Component
     {
         $this->validate();
 
+        // Update product
+
         $product = Product::findOrFail($this->productId);
 
         $product->name = $this->name;
@@ -182,9 +184,22 @@ class EditProductLivewire extends Component
         $product->available_time_end = $this->availableTimeEnd;
         $product->is_recommend = $this->isRecommend;
 
-        $update = $product->update();
+        $updateProduct = $product->update();
 
-        if($update) {
+        // Update product by branch
+        $updateProductByBranch = $product->branch_product()->updateOrCreate([
+            'product_id' => $product->id,
+            'branch_id' => session()->get('branch_id') ?? 1,
+        ], [
+            'price' => $this->price,
+            'discount_type' => $this->discountType,
+            'discount' => $this->discount,
+            'stock_type' => $this->stockType,
+            'stock' => $this->stock,
+            'is_available' => true
+        ]);
+
+        if($updateProduct && $updateProductByBranch) {
             $this->refresh();
             return $this->redirect(route('admin.product.index', [
                 'event' => 'toastUpdateProduct',

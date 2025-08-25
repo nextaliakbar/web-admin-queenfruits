@@ -19,8 +19,10 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'phone',
         'email',
         'password',
+        'is_active'
     ];
 
     /**
@@ -41,8 +43,13 @@ class User extends Authenticatable
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
+            'is_active' => 'boolean',
             'password' => 'hashed',
         ];
+    }
+
+    public function customer_addresses()
+    {
+        return $this->hasMany(CustomerAddress::class, 'user_id', 'id');
     }
 }

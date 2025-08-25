@@ -17,6 +17,10 @@ class Admin extends Authenticatable
         'created_at', 'updated_at' 
     ];
 
+    protected $casts = [
+        'status' => 'boolean'
+    ];
+
     public function role()
     {
         return $this->belongsTo(AdminRole::class, 'admin_role_id', 'id');

@@ -17,12 +17,12 @@
       </li>
       <li class="nav-item dropdown user-menu">
         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-          <img src="{{asset('assets/image/user.png')}}" class="user-image img-circle" alt="User Image">
+          <img src="{{asset('assets/image/profile-picture.png')}}" class="user-image img-circle" alt="User Image">
         </a>
         <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <!-- User image -->
           <li class="user-header">
-            <img src="{{asset('assets/image/user.png')}}" class="img-circle" alt="User Image">
+            <img src="{{asset('assets/image/profile-picture.png')}}" class="img-circle" alt="User Image">
             <p>
               {{auth()->guard('admin')->user()->name}}
             </p>

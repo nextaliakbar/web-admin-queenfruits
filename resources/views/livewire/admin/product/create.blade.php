@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1><i class="fas fa"></i>Tambah Produk</h1>
+            <h1>Tambah Produk</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#"><i class="fas fa-gem mr-1"></i>Pengaturan Produk</a></li>
-              <li class="breadcrumb-item active">Tambah Produk</li>
+              <li class="breadcrumb-item"><i class="fas fa-gem mr-1"></i>Pengaturan Produk</li>
+              <li class="breadcrumb-item">Tambah Produk</li>
             </ol>
           </div>
         </div>
