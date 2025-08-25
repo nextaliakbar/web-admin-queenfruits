@@ -33,13 +33,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.pos.add')}}" class="nav-link {{request()->routeIs('admin.pos.add') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah Penjualan</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.pos.index')}}" class="nav-link {{request()->routeIs('admin.pos.index') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Pesanan</p>
                 </a>
@@ -50,7 +50,7 @@
           <li class="nav-header">MANAJEMEN PESANAN</li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a wire:navigate href="{{route('admin.verify-payment.index', ['status' => 'pending'])}}" class="nav-link {{request()->routeIs('admin.verify-payment.index') ? 'active' : ''}}">
               <i class="nav-icon fas fa-money-bill"></i>
               <p>
                 Verifikasi Pembayaran
@@ -59,7 +59,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link {{request()->routeIs('admin.order.*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-shopping-cart"></i>
               <p>
                 Pesanan
@@ -68,43 +68,43 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.order.index', ['status' => 'all'])}}" class="nav-link {{request()->route()->parameter('status') == 'all' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Semua<span class="badge badge-info right">2</span></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.order.index', ['status' => 'pending'])}}" class="nav-link {{request()->route()->parameter('status') == 'pending' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tertunda<span class="badge badge-secondary right">2</span></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.order.index', ['status' => 'confirmed'])}}" class="nav-link {{request()->route()->parameter('status') == 'confirmed' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dikonfirmasi<span class="badge badge-primary right">2</span></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.order.index', ['status' => 'processed'])}}" class="nav-link {{request()->route()->parameter('status') == 'processed' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Diproses<span class="badge badge-dark right">2</span></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.order.index', ['status' => 'delivery'])}}" class="nav-link {{request()->route()->parameter('status') == 'delivery' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pengiriman<span class="badge badge-warning right">2</span></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.order.index', ['status' => 'delivered'])}}" class="nav-link {{request()->route()->parameter('status') == 'delivered' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Terkirim<span class="badge badge-success right">2</span></p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.order.index', ['status' => 'canceled'])}}" class="nav-link {{request()->route()->parameter('status') == 'canceled' ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dibatalkan<span class="badge badge-danger right">2</span></p>
                 </a>
@@ -145,7 +145,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.product.review')}}" class="nav-link {{request()->routeIs('admin.product.review') ? 'active' : ''}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Review Produk</p>
                 </a>
@@ -176,7 +176,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link {{request()->routeIs('admin.delivery-man.*') ? 'active' : ''}} class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Kurir
@@ -185,19 +185,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.delivery-man.add')}}" class="nav-link {{request()->routeIs('admin.delivery-man.add') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Tambah Kurir</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.delivery-man.index')}}" class="nav-link {{request()->routeIs('admin.delivery-man.index') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Kurir</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a wire:navigate href="{{route('admin.delivery-man.review')}}" class="nav-link {{request()->routeIs('admin.delivery-man.review') ? 'active' : ''}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Review Kurir</p>
                 </a>
